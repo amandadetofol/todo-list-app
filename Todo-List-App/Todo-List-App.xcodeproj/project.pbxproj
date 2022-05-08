@@ -13,6 +13,11 @@
 		A6333D1728243B9700159620 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333D1628243B9700159620 /* DetailViewController.swift */; };
 		A6333D1928243FDD00159620 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333D1828243FDD00159620 /* MainViewModel.swift */; };
 		A6333D1B2824409400159620 /* MainViewController + UiTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333D1A2824409400159620 /* MainViewController + UiTableViewDataSource.swift */; };
+		A69F0AD5282841EA00EE7CCE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F0AD4282841EA00EE7CCE /* DetailView.swift */; };
+		A69F0AD72828420D00EE7CCE /* NewActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F0AD62828420D00EE7CCE /* NewActivityView.swift */; };
+		A69F0AD9282842CF00EE7CCE /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F0AD8282842CF00EE7CCE /* NewActivityViewController.swift */; };
+		A69F0ADD282843D300EE7CCE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F0ADC282843D300EE7CCE /* DetailViewModel.swift */; };
+		A69F0ADF282845F700EE7CCE /* MainViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69F0ADE282845F700EE7CCE /* MainViewController+UITableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		A6333D1628243B9700159620 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6333D1828243FDD00159620 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A6333D1A2824409400159620 /* MainViewController + UiTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UiTableViewDataSource.swift"; sourceTree = "<group>"; };
+		A69F0AD4282841EA00EE7CCE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A69F0AD62828420D00EE7CCE /* NewActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityView.swift; sourceTree = "<group>"; };
+		A69F0AD8282842CF00EE7CCE /* NewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
+		A69F0ADC282843D300EE7CCE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A69F0ADE282845F700EE7CCE /* MainViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,6 @@
 				A6333D1528243B4A00159620 /* Controller */,
 				A6333D1428243B4000159620 /* ViewModel */,
 				A6333D1328243B3800159620 /* View */,
-				A6333D1228243B3300159620 /* Model */,
 				A6333CFE28243A2E00159620 /* AppDelegate.swift */,
 				A6333D0728243A2E00159620 /* Assets.xcassets */,
 				A6333D0C28243A2E00159620 /* Info.plist */,
@@ -67,16 +76,11 @@
 			path = "todo-list-app";
 			sourceTree = "<group>";
 		};
-		A6333D1228243B3300159620 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		A6333D1328243B3800159620 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A69F0AD4282841EA00EE7CCE /* DetailView.swift */,
+				A69F0AD62828420D00EE7CCE /* NewActivityView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A6333D1828243FDD00159620 /* MainViewModel.swift */,
+				A69F0ADC282843D300EE7CCE /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -94,7 +99,9 @@
 			children = (
 				A6333D0228243A2E00159620 /* MainViewController.swift */,
 				A6333D1A2824409400159620 /* MainViewController + UiTableViewDataSource.swift */,
+				A69F0ADE282845F700EE7CCE /* MainViewController+UITableViewDelegate.swift */,
 				A6333D1628243B9700159620 /* DetailViewController.swift */,
+				A69F0AD8282842CF00EE7CCE /* NewActivityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,9 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69F0AD9282842CF00EE7CCE /* NewActivityViewController.swift in Sources */,
+				A69F0AD72828420D00EE7CCE /* NewActivityView.swift in Sources */,
 				A6333D1728243B9700159620 /* DetailViewController.swift in Sources */,
+				A69F0ADD282843D300EE7CCE /* DetailViewModel.swift in Sources */,
 				A6333D0328243A2E00159620 /* MainViewController.swift in Sources */,
 				A6333CFF28243A2E00159620 /* AppDelegate.swift in Sources */,
+				A69F0AD5282841EA00EE7CCE /* DetailView.swift in Sources */,
+				A69F0ADF282845F700EE7CCE /* MainViewController+UITableViewDelegate.swift in Sources */,
 				A6333D1928243FDD00159620 /* MainViewModel.swift in Sources */,
 				A6333D1B2824409400159620 /* MainViewController + UiTableViewDataSource.swift in Sources */,
 			);

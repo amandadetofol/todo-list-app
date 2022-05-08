@@ -33,20 +33,59 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTodoListTableView()
+        self.setupNavigationBar()
+        self.setupUserDefaultConfigurations()
+        self.updateTasks()
     }
     
     //MARK: Private methods
     private func setupTodoListTableView() {
         self.view.addSubview(todoListTableView)
     }
+    
+    private func setupUserDefaultConfigurations(){
+        let userDefaults = UserDefaults()
+        if !userDefaults.bool(forKey: "setup") {
+            userDefaults.set(true, forKey: "setup")
+            userDefaults.set(0, forKey: "count")
+        }
+    }
+        
+    private func setupNavigationBar(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
+                                                                 style: .done,
+                                                                 target: self,
+                                                                 action: #selector(handleAddNewTap))
+    }
+    
+    func updateTasks(){
+        
+        mainViewModel.todoList.removeAll()
+        
+        guard let count = UserDefaults().object(forKey: "count") as? Int else { return }
+    
+        for todoItem in 0...count {
+            if let task = UserDefaults().object(forKey: "task_\(todoItem+1)") as? String {
+                self.mainViewModel.todoList.append(task)
+            }
+        }
+        self.todoListTableView.reloadData()
+       
+    }
+
 }
 
-
-
-extension MainViewController: UITableViewDelegate {
+extension MainViewController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    @objc func handleAddNewTap(){
+        let viewController = NewActivityViewController()
+        viewController.update = {
+            DispatchQueue.main.async {
+                self.updateTasks()
+            }
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
+
